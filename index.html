@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+        
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #0a0a0a;
+                color: #ffffff;
+            }
+        
+            .hero {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        
+            .hero h1 {
+                font-size: 52px;
+                margin-bottom: 16px;
+            }
+        
+            .hero p {
+                font-size: 20px;
+                color: #888888;
+            }
+              
+            .section {
+        padding: 80px 20px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .section h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+        color: #ffffff;
+    }
+
+    .skills {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .skill-tag {
+        background-color: #1a1a1a;
+        border: 1px solid #333;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        color: #888;
+    }
+    .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.project-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.project-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px solid #444;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+.github-btn {
+    margin-top: 32px;
+    padding: 12px 32px;
+    border: 1px solid #ffffff;
+    border-radius: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.github-btn:hover {
+    background-color: #ffffff;
+    color: #0a0a0a;
+}
+.project-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.project-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: #888;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.project-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 2px;
+}
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Muhammad Mibsam Baig - Developer</title>
+    </head>
+
+    <body>
+        <div class="hero">
+        <h1>Muhammad Mibsam Baig</h1>
+        <p>CS Student and a Developer Based in Karachi 🇵🇰</p>
+        <a href="https://github.com/mibsambaig-web" target="_blank" class="github-btn">
+            View My GitHub
+        </a>
+        </div>
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">HTML & CSS</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Git & GitHub</span>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Expense Tracker</h3>
+                <p>A command-line app to track daily expenses with file saving. Built with Python.</p>
+                <a href="https://github.com/mibsambaig-web/python-phase1" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Contact</h2>
+            <p style="color: #888; font-size: 18px;">Let's build something together.</p>
+            <a href="mailto:mibsambaig@gmail.com" class="github-btn" style="display: inline-block; margin-top: 24px;">Email Me</a>
+        </div>
+        <div class="section">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>Expense Tracker</h3>
+                    <p>A Python CLI app to track daily expenses. Saves and loads data from a JSON file automatically.</p>
+                    <a href="https://github.com/mibsambaig-web/python-phase1" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
