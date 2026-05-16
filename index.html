@@ -216,6 +216,71 @@ nav {
     background-color: #ffffff;
     color: #0a0a0a;
 }
+
+/* Minimap Wrapper */
+.code-minimap {
+    position: fixed;
+    top: 100px;
+    right: 25px;
+    width: 75px; /* Slightly wider to accommodate text layout nicely */
+    height: 160px;
+    background-color: #1e1e1e; /* Match true VS Code background */
+    border: 1px solid #2d2d2d;
+    border-radius: 4px;
+    padding: 10px 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+}
+
+body:hover .code-minimap {
+    opacity: 0.9;
+    border-color: #4f4f4f;
+}
+
+/* VS Code Viewport Slider Box */
+.minimap-slider {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.1s linear;
+}
+
+/* Real-Text Minimap Lines */
+.minimap-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5px;
+    font-family: 'Courier New', Courier, monospace; /* Monospaced look */
+    font-size: 2.5px; /* Microscopic font size */
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.m-line {
+    display: block;
+    text-shadow: 0 0 0.5px currentColor; /* Gives it that soft blurred glow code line look */
+}
+
+/* Simulated Indent Levels */
+.indent-1 { margin-left: 4px; }
+.indent-2 { margin-left: 8px; }
+
+/* Authentic VS Code Dark+ Color Coding Tokens */
+.m-line.tag  { color: #569cd6; } /* Blue Tags */
+.m-line.attr { color: #9cdcfe; } /* Light Blue Attributes */
+.m-line.css  { color: #ce9178; } /* Orange CSS Properties */
+.m-line.js   { color: #dcdcaa; } /* Yellow Functions */
+.m-line.text { color: #d4d4d4; } /* White Plain Text */
+
         </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -232,6 +297,52 @@ nav {
                 <a href="#samples">Samples</a>
             </div>
         </nav>
+        <!-- VS Code Style Minimap -->
+        <div class="code-minimap">
+            <div class="minimap-slider"></div>
+            <div class="minimap-lines">
+                <span class="m-line tag">&lt;!DOCTYPE html&gt;</span>
+        <span class="m-line tag">&lt;html lang="en"&gt;</span>
+        <span class="m-line tag">&lt;head&gt;</span>
+        <span class="m-line attr indent-1">&lt;meta charset="UTF-8"&gt;</span>
+        <span class="m-line attr indent-1">&lt;style&gt;</span>
+        <span class="m-line css indent-2">html { scroll-behavior: smooth; }</span>
+        <span class="m-line css indent-2">body { background: #0a0a0a; color: #fff; }</span>
+        <span class="m-line css indent-2">.hero { height: 100vh; display: flex; }</span>
+        <span class="m-line attr indent-1">&lt;/style&gt;</span>
+        <span class="m-line tag">&lt;/head&gt;</span>
+        <span class="m-line tag">&lt;body&gt;</span>
+        <span class="m-line tag indent-1">&lt;nav&gt;</span>
+        <span class="m-line attr indent-2">&lt;img src="logo.png" class="logo"&gt;</span>
+        <span class="m-line tag indent-2">&lt;div class="nav-links"&gt;</span>
+        <span class="m-line text indent-3">&lt;a href="#skills"&gt;Skills&lt;/a&gt;</span>
+        <span class="m-line text indent-3">&lt;a href="#projects"&gt;Projects&lt;/a&gt;</span>
+        <span class="m-line tag indent-2">&lt;/div&gt;</span>
+        <span class="m-line tag indent-1">&lt;/nav&gt;</span>
+        <span class="m-line tag indent-1">&lt;div class="hero"&gt;</span>
+        <span class="m-line js indent-2">&lt;h1&gt;Muhammad Mibsam Baig&lt;/h1&gt;</span>
+        <span class="m-line attr indent-2">&lt;p&gt;Full-Stack Developer&lt;/p&gt;</span>
+        <span class="m-line tag indent-1">&lt;/div&gt;</span>
+        <span class="m-line tag indent-1">&lt;section id="skills"&gt;</span>
+        <span class="m-line text indent-2">&lt;span class="tag"&gt;Python&lt;/span&gt;</span>
+        <span class="m-line text indent-2">&lt;span class="tag"&gt;JavaScript&lt;/span&gt;</span>
+        <span class="m-line text indent-2">&lt;span class="tag"&gt;React&lt;/span&gt;</span>
+        <span class="m-line tag indent-1">&lt;/section&gt;</span>
+        <span class="m-line tag indent-1">&lt;script&gt;</span>
+        <span class="m-line js indent-2">const text = "Mibsam Baig";</span>
+        <span class="m-line js indent-2">let i = 0;</span>
+        <span class="m-line js indent-2">function typeWriter() {</span>
+        <span class="m-line js indent-3">if (i &lt; text.length) {</span>
+        <span class="m-line text indent-4">hero.textContent += text.charAt(i);</span>
+        <span class="m-line js indent-4">i++; setTimeout(typeWriter, 80);</span>
+        <span class="m-line js indent-3">}</span>
+        <span class="m-line js indent-2">}</span>
+        <span class="m-line js indent-2">typeWriter();</span>
+        <span class="m-line tag indent-1">&lt;/script&gt;</span>
+        <span class="m-line tag">&lt;/body&gt;</span>
+        <span class="m-line tag">&lt;/html&gt;</span>
+            </div>
+        </div>
         <div class="hero">
         <h1>Muhammad Mibsam Baig</h1>
         <p>CS Student and a Full-Stack Developer Based in Karachi 🇵🇰</p>
@@ -277,8 +388,8 @@ nav {
             </div><br><br>
             <div class="project-card">
                 <h3>A Clinic Booking App</h3>
-                <p>A React app that manages the bookings for a dental clinic (Front-End only for now. Working on Back-End.) </p>
-                <a href="https://magenta-sunburst-be2ce0.netlify.app/" target="_blank" class="link-btn">View Live -></a>
+                <p>A Full-Stack app that manages the bookings for a dental clinic, with 2 different login screens for patient and admin.</p>
+                <a href="https://clinic-booking-git-main-mibsambaig-webs-projects.vercel.app/" target="_blank" class="link-btn">View Live -></a>
             </div>
         </div>
         
@@ -320,6 +431,20 @@ nav {
             }
         
             typeWriter();
+            const minimapSlider = document.querySelector('.minimap-slider');
+
+window.addEventListener('scroll', () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (totalHeight > 0) {
+        const scrollPercent = window.scrollY / totalHeight;
+        
+        // Max travel is: Container Height (160) - Slider Height (40) = 120
+        const maxSliderTravel = 120; 
+        
+        const travelDistance = scrollPercent * maxSliderTravel;
+        minimapSlider.style.transform = `translateY(${travelDistance}px)`;
+    }
+});
         </script>
     </body>
 </html>
